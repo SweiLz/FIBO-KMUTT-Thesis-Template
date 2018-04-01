@@ -1,0 +1,27 @@
+\begin{figure}[htbp]
+	\begin{center}
+		\begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+			\node[state,initial] (q_0)   {$q_0$}; 
+			\node[state] (q_5) [above right=of q_0] {$q_5$}; 
+			\node[state] (q_10) [below right=of q_0] {$q_{10}$};
+						
+			\node[state,accepting](q_15) [below right=of q_5] {$q_{15}$};
+			\node[state,accepting](q_20) [below right=of q_15] {$q_{20}$};
+			\node[state] (q_c5) [above right=of q_20] {$qc_{5}$};
+			\path[->] 
+			(q_0) edge node {5} (q_5)
+			edge  node {10} (q_10)
+			(q_5) edge node {5} (q_10)
+			edge node {10} (q_15)
+			(q_10) edge node {5} (q_15)
+			edge node {10} (q_20)
+			(q_20) edge node {} (q_c5);
+			%    edge  node [swap] {1} (q_2)
+			% (q_1) 	edge  node  {1} (q_3)
+			% 		edge [loop above] node {0} ()
+			% (q_2)	edge  node [swap] {0} (q_3) 
+			% 		edge [loop below] node {1} ();
+		\end{tikzpicture}
+		\caption{กราฟแสดงการหยอดเหรียญ 15 Vending Machine}
+	\end{center}
+\end{figure}

@@ -1,2 +1,3 @@
-# KMUTT-Thesis-Template
-KMUTT Thesis Template with LaTeX
+# FIBO-KMUTT-Thesis-Template
+FIBO KMUTT Thesis Template with LaTeX
+

@@ -1,0 +1,127 @@
+
+
+\subsection{หุ่นยนต์ฮิวมานอยด์}
+หุ่นยนต์ฮิวมานอยด์ คือ หุ่นยนต์ที่ถูกสร้างขึ้นมาให้มีรูปร่างคล้ายคลึงกับสรีระโครงสร้างของมนุษย์
+มักถูกออกแบบขึ้นมาเพื่อจุดประสงค์เฉพาะอย่าง เช่น เพื่อให้ใช้เครื่องมือต่างๆของมนุษย์ เพื่อให้อยู่ในสภาพแวดล้อมของมนุษย์
+เพื่อศึกษาการเคลื่อนไหนของร่ายกายมนุษย์ เพื่อศึกษาการมองเห็นของมนุษย์ เพื่อทำงานในสิ่งที่มนุษย์ทำได้ยาก
+หรือเพื่อวัตถุประสงค์อื่นๆ โดยทั่วไปแล้ว หุ่นยนต์ฮิวมานอยด์จะประกอบไปด้วย 4 ส่วนคือ ส่วนของหัว ส่วนของลำตัว ส่วนของแขน
+และส่วนของขา แต่การสร้างหุ่นยนต์ฮิวมานอยด์นั้นก็ไม่จำเป็นที่จะต้องมีส่วนประกอบทุกส่วนดังที่กล่าวไป
+ในบางครั้งอาจมีเพียงแค่ส่วนบนเท่านั้น ดังรูปที่ \ref{fig:namo} หุ่นยนต์นะโมจากสถาบันวิทยาการหุ่นยนต์ภาคสนาม
+เป็นหุ่นยนต์ที่มีส่วนบนเหมือนมนุษย์ แต่มีส่วนล่างเป็นล้อ หรือหุ่นยนต์ฮิวมานอยด์ที่มีเพียงแค่ส่วนล่าง ดังรูปที่ \ref{fig:ส้มจุก}
+หุ่นยนต์ส้มจุก เป็นหุ่นยนต์ฮิวมานอยด์ที่มีเพียงแค่ส่วนขาเท่านั้น หรือหุ่นยนต์ฮิวมานอยด์ที่มีเพียงใบหน้าเหมือนมนุษย์ ดังรูปที่
+\ref{fig:โซเฟีย} หุ่นยนต์โซเฟีย เป็นแอนดรอยด์ที่มีหน้าตาคล้ายมนุษย์มาก มีตา มีปาก สามารถพูดปฏิสัมพันธ์กับมนุษย์ได้
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{chapter2/images/namo.jpg}
+        \caption{หุ่นยนต์ประชาสัมพันธ์นะโม}
+        \label{fig:namo}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{chapter2/images/ส้มจุก.jpg}
+        \caption{หุ่นยนต์เดินสองขาส้มจุก}
+        \label{fig:ส้มจุก}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{chapter2/images/โซเฟีย.jpg}
+        \caption{หุ่นยนต์แอนดรอยด์โซเฟีย}
+        \label{fig:โซเฟีย}
+    \end{subfigure}
+    \caption{แสดงความแตกต่างของหุ่นยนต์ฮิวมานอยด์แต่ละประเภท}
+    \label{fig:diff_humanoid}
+\end{figure}
+
+งานวิจัยทางด้านหุ่นยนต์ฮิวมานอยด์จากอดีตจนถึงปัจจุบันส่วนใหญ่จะเป็นการพัฒนาความสามารถของการเดินของหุ่นยนต์
+เช่น เริ่มต้นจากแรกสุดจะเป็นการพัฒนาให้หุ่นยนต์สามารถเดินหน้าได้ ต่อมาก็เพิ่มความสามารถให้หุ่นยนต์สามารถเดินบนพื้นเอียง พื้นขรุขระ
+เดินเลี้ยวซ้ายขวา เดินขึ้นลงบันได ฯลฯ เป็นต้น นอกจากนี้ยังมีการพัฒนาปรับปรุงสมดุลของการเดินแบบสองขาอีกด้วย สมดุลของการเดินสามารถแบ่งได้สองแบบหลัก
+คือ การเดินแบบสมดุลสถิต และการเดินแบบสมดุลพลวัต งานในยุคแรกนั้นจะพัฒนาให้เดินได้แบบสมดุลสถิต ต่อมาเป็นสมดุลกึ่งพลวัต
+และเป็นสมดุลพลวัต การพัฒนาตัวควบคุมการเดินของหุ่นยนต์ จำเป็นที่จะต้องใช้ความรู้ทางด้านกลศาสตร์ค่อนข้างมาก มีการใช้สมการที่มีความซับซ้อน
+
+Zheng และคณะ (1988) พัฒนาหุ่นยนต์สองขาที่สามารถเดินบนพื้นราบได้ ให้สามารถเดินต่อเนื่องไปบนพื้นเอียงได้ด้วย
+พื้นเอียงที่ใช้มีลักษณะเป็นพื้นเอียงขึ้น หุ่นยนต์ที่ใช้ในงานนี้มีข้อต่อสะโพก (hip), ข้อเท้า (ankle) และลำตัว (torso) มีเซนเซอร์วัดแรงกด (force sensor)
+ติดตั้งอยู่ที่ปลายเท้าและส้นเท้าแต่ละข้างเพื่อใช้วัดตำแหน่งของน้ำหนักโดยรวม (center of gravity) ของหุ่นยนต์ การเดินของงานวิจัยจะพิจารณาเฉพาะการเดินในแนวหน้าหลัง
+โดยมีหลักการคือ การเดินบนพื้นเอียงโดยที่หุ่นยนต์ยังเดินในท่าทางเหมือนกับตอนที่เดินบนพื้นราบจะทำให้น้ำหนักโดยรวมของหุ่นยนต์เลื่อนไปข้างหลัง
+ดังนั้นการที่หุ่นยนต์ขยับลำตัวไปด้านหน้าจำทำให้น้ำหนักโดยรวมของหุ่นยนต์กลับมาอยู่ตรงกลางของพื้นที่รับน้ำหนักเหมือนเดิม
+ซึ่งจะทำให้หุ่นยนต์มีความสมดุลได้ ดั้งนั้นข้อมูลที่ได้จากหน่วยวัดแรงกดที่เท้าจะถูกนำมาคำนวณตลอดการเดินเพื่อใช้ในการปรับเปลี่ยนมุมการขยับของลำตัว
+การเดินบนพื้นราบเป็นแบบสมดุลสถิตและการเดินบนพื้นเอียงก็ยังคงเป็นแบบสมดุลสถิตเช่นกัน
+
+Inaba และคณะ (1995) สร้างหุ่นยนต์เลียนแบบลิง (ape-like biped) ประกอบด้วยสองมือและสองขา มีการเดินแบบสมดุลสถิต
+งานวิจัยนี้มีความคิดว่านอกจากการทำให้หุ่นยนต์สองขาเดินได้โดยไม่ล้มแล้ว ควรจะทำหุ่นยนต์ที่สามารถลุกขึ้นเองได้หลังจากที่ล้มแล้วด้วย
+ดังนั้นในงานนี้ หุ่นยนต์ถูกพัฒนาให้สามารถเดิน เมื่อล้มแล้วก็สามารถพลิกตัวและลุกขึ้นมาเดินให้ได้
+
+Kun และ Miller (1996) ได้นำโครงข่ายประสาทเทียม มาประยุกต์ใช้ในการปรับเปลี่ยนท่าทางการเดินโดยอัตโนมัติของหุ่นยนต์สองขา
+การที่หุ่นยนต์สามารถปรับเปลี่ยนท่าทางได้โดยอัตโนมัตินี้มีประโยชน์ทำให้หุ่นยนต์เดินได้บนพื้นผิวหลากหลายลักษณะมากขึ้น
+ในงานนี้พิจารณาท้ังสมดุลในแนวหน้าหลัง (sigittal plane) และแนวซ้ายขวา (frontal plane) และการเดินของหุุ่นยนต์เป็นแบบสมดุลพลวัต
+หลักการทำงานประกอบด้วยตัวสร้างท่าทางการเดินหนึ่งตัว และตัวปรับท่าทางการเดินทั้งแนวหน้าหลังและซ้ายขวาอีกหนึ่งตัว
+โดยค่าการปรับเปลี่ยนนั้นจะได้มาจาก แรงกดที่เท้า ความยาวการก้าวเท้า ความสูงของการยกเท้า เป็นต้น นอกจากนี้
+ในปีถัดมาทั้งสิงได้ใช้หลักการที่ใช้ในงานนี้ไปใช้กับการเดินของหุ่นยนต์อีกตัว (Kun and Miller, 1997)
+
+Hirai และคณะ (1998) พัฒนาหุ่นยนต์ฮิวมานอยด์ ซึ่งตัวหุ่นยนต์มีความคล้ายมนุษย์มาก สามารถเดินได้อย่างราบลื่นคล้านมนุษย์มากที่สุด
+เช่น สามารถเดินได้ในพื้นผิวชนิดต่างๆ เดินได้บนพื้นเอียงขึ้นเอียงลง เดินขึ้นลงบันได้ได้ เดินเข็นรถได้ เป็นต้น การเดินในทุกสถานการณ์เป็นการเดินแบบสมดุลพลวัต
+หุ่นยนต์สามารถเดินได้ด้วยความเร็วสูงสุด 4.7 กิโลเมตรต่อชั่วโมง หุ่นยนต์ประกอบไปด้วย แขนข้างละ 9 องศาอิสระ ขาข้างละ 6 องศาอิสระ
+ที่บริเวณหัวมีกล้องติดตั้งอยู่ 4 ตัว นอกจากนี้ยังมีอุปกรณ์ที่ใช้ในการรักษาสมดุลอื่นๆ อีกได้แก่ IMU ที่ติดตั้งบริเวณลำตัว และ Force sensor ที่ติดที่เท้าทั้งสองข้าง
+
+ส่วนประกอบของหุ่นยนต์ฮิวมานอยด์สามารถจำแนกออกเป็นส่วนหลักๆได้สามส่วนคือ 
+ส่วนการรับรู้ ส่วนการประมวลผล และส่วนการขับเคลื่อน
+
+\subsubsection*{การรับรู้ของหุ่นยนต์ฮิวมานอยด์}
+Sensing on humanoid robots is more difficult than on other types of robots since the
+movement of the robot leads to noise in the sensors.  For example, camera images
+get blurry if the shutter speed is too slow or if it is a rolling shutter sensor.  Also,
+odometry  data  is  less  certain  than  on  wheeled  robots.   Furthermore,  the  position
+of sensors in relation to the world is not stable.  On a wheeled robot, the camera
+is  usually  a  fixed  hight  above  the  ground.   A  humanoid  robot  has  to  do  forward
+kinematics from its support feet to the camera to get the position and orientation.
+This also requires knowing which leg is the supporting leg and if the robot is standing
+at all. For this an inertia measurement unit (IMU) and position encoders in the joints
+are crucial.  These are described in the following.
+The  IMU  is  a  combination  of  a  gyroscope  and  an  accelerometer.   It  measures
+angular velocities and linear accelerations.  It is normally installed inside the torso
+near the center of mass.  The sensor values can be used to detect falls and to identify
+the side on which the robot landed after a fall.
+Furthermore,  the  positions  of  the  robot’s  joints  have  to  be  measured.   This  is
+usually  realized  by  a  combination  of  a  magnet  on  the  end  of  the  outermost  gear
+and a hall sensor [Ramsden, 2011].  When the gear rotates, the magnet field rotates
+accordingly.  The hall sensor measures this and a microcontroller can compute the
+position of the servo based on this data.
+\subsubsection*{การประมวลผลของหุ่นยนต์ฮิวมานอยด์}
+In  the  early  days  of  humanoid  robots,  having  enough  computational  power  was
+difficult because the  space and  mass for  the computational  unit are  very  limited.
+Today, single-board computers, e.g.  Raspberry Pi [Upton and Halfacree, 2014], and
+Intel NUCs [Perico et al., 2014] are mostly used, depending on the size of the robot.
+All these boards provide GPUs and multiple CPU cores.  Therefore the interest in
+parallelizing software and outsourcing computation to the GPU, especially for neural
+networks  and  computer  vision,  rose  in  the  last  years.   Sometimes  multiple  cheap
+single-board computers are installed and connected using an Ethernet network, to
+get  a  high  performance  for  low  cost.   This  comes  with  the  disadvantage  that  the
+software has to be able to run in parallel on a distributed system.
+\subsubsection*{การขับเคลื่อนของหุ่นยนต์ฮิวมานอยด์}
+A humanoid robot is typically composed of multiple joints.  Each joint has to be
+actuated which can be done in two different ways.  Either the joint can be moved
+by tendons, similar to the human movement, or a motor can be placed directly into
+the  joint  axis.   The  later  approach  is  used  more  often  in  smaller  robots,  since  it
+needs less space.  Using tendons makes exact positioning of the joint more difficult,
+but also enables to use bigger and linear motors, since they don’t have to be placed
+inside the joint.
+Actuators need a high strength in relation to their weight, since they have to carry
+themselves.  Multiple actuators are typically needed for one limb, resulting in a high
+number of cables, which have to be laid over multiple joints.  Therefore a bus system
+is often used to limit the number of cables.  The bus requires the motors to have a
+micro controller, to receive goal positions and to send the current position.  Micro
+controller, motor and a gearbox are usually grouped together in a case and called
+servo
+.  For reaching the goal position and for holding it, a controller is required in
+the firmware of the servo.  This is usually a PID controller [Wescott, 2000].
+
+
+\clearpage
+\subsection{ทฤษฏีที่เกี่ยวข้องกับมนุษย์}
+\input{chapter2/literature_review/humanwalk}
+\subsection{ทฤษฏีที่เกี่ยวข้องกับหุ่นยนต์ฮิวมานอยด์}
+\input{chapter2/literature_review/humanoid}
