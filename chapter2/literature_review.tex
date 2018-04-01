@@ -1,5 +1,4 @@
-
-
+\section{ทฤษฎีที่เกี่ยวข้อง}
 \subsection{หุ่นยนต์ฮิวมานอยด์}
 หุ่นยนต์ฮิวมานอยด์ คือ หุ่นยนต์ที่ถูกสร้างขึ้นมาให้มีรูปร่างคล้ายคลึงกับสรีระโครงสร้างของมนุษย์
 มักถูกออกแบบขึ้นมาเพื่อจุดประสงค์เฉพาะอย่าง เช่น เพื่อให้ใช้เครื่องมือต่างๆของมนุษย์ เพื่อให้อยู่ในสภาพแวดล้อมของมนุษย์
@@ -90,6 +89,7 @@ usually  realized  by  a  combination  of  a  magnet  on  the  end  of  the  out
 and a hall sensor [Ramsden, 2011].  When the gear rotates, the magnet field rotates
 accordingly.  The hall sensor measures this and a microcontroller can compute the
 position of the servo based on this data.
+
 \subsubsection*{การประมวลผลของหุ่นยนต์ฮิวมานอยด์}
 In  the  early  days  of  humanoid  robots,  having  enough  computational  power  was
 difficult because the  space and  mass for  the computational  unit are  very  limited.
@@ -101,6 +101,7 @@ networks  and  computer  vision,  rose  in  the  last  years.   Sometimes  multi
 single-board computers are installed and connected using an Ethernet network, to
 get  a  high  performance  for  low  cost.   This  comes  with  the  disadvantage  that  the
 software has to be able to run in parallel on a distributed system.
+
 \subsubsection*{การขับเคลื่อนของหุ่นยนต์ฮิวมานอยด์}
 A humanoid robot is typically composed of multiple joints.  Each joint has to be
 actuated which can be done in two different ways.  Either the joint can be moved
@@ -119,9 +120,18 @@ servo
 .  For reaching the goal position and for holding it, a controller is required in
 the firmware of the servo.  This is usually a PID controller [Wescott, 2000].
 
-
 \clearpage
 \subsection{ทฤษฏีที่เกี่ยวข้องกับมนุษย์}
 \input{chapter2/literature_review/humanwalk}
 \subsection{ทฤษฏีที่เกี่ยวข้องกับหุ่นยนต์ฮิวมานอยด์}
 \input{chapter2/literature_review/humanoid}
+
+\clearpage
+\section{งานวิจัยที่เกี่ยวข้อง}
+\subsection{ตัวอย่างหุ่นยนต์ฮิวมานอยด์}
+\input{chapter2/literature_review/robot_review}
+
+\clearpage
+\subsection{งานวิจัยการออกแบบระบบหุ่นยนต์ฮิวมานอยด์}
+
+
