@@ -35,8 +35,12 @@
 \usepackage{bibentry}
 \usepackage{tikz} %% สำหรับวาดแผนภาพต่างๆ
 \usepackage{ulem} %% สำหรับพิมพ์ตัวเอียง ตัวขีดเส้นใต้ ตัวขีดกลาง
-\usetikzlibrary{automata, positioning, arrows}
+\usetikzlibrary{shapes,automata, positioning, arrows}
 
+
+\tikzstyle{topic} = [rectangle, draw, fill=blue!20,text width=8em, text badly centered, node distance=2cm]
+\tikzstyle{line} = [draw, -latex',line width=0.75mm]
+\tikzstyle{node} = [draw, ellipse,fill=red!20, node distance=3cm]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% FIBO, KMUTT Thesis Template %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -289,6 +293,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ******************************* Page Config *********************************
+\renewcommand{\thepage}{\thaiAlph{page}}
 \renewenvironment{titlepage}
 {
 	\begingroup
@@ -308,6 +313,7 @@
 {
 	\begingroup
 	\newpage
+	
 	\setcounter{page}\z@
 	\addtocounter{page}{1}
 }
@@ -462,7 +468,7 @@
     \begingroup
     }{
     \vfill
-    \endgroup
+	\endgroup
 }
 
 \newenvironment{symbols}
@@ -475,6 +481,20 @@
     }{
     \vfill
     \endgroup
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Vitae  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{vitae}{
+\cleardoublepage
+\chapter*{ประวัติผู้เขียน}
+\addcontentsline{toc}{chapter}{ประวัติผู้เขียน}
+
+\begingroup}{
+\vfill
+\endgroup
+\newpage
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -501,4 +521,6 @@
   		{\bfseries\titlerule*[.25pc]{.}\contentspage}% <filler-page-format>
 }
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
