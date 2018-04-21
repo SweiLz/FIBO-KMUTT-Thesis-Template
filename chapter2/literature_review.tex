@@ -1,4 +1,3 @@
-\section{ทฤษฎีที่เกี่ยวข้อง}
 \subsection{หุ่นยนต์ฮิวมานอยด์}
 หุ่นยนต์ฮิวมานอยด์ คือ หุ่นยนต์ที่ถูกสร้างขึ้นมาให้มีรูปร่างคล้ายคลึงกับสรีระโครงสร้างของมนุษย์
 มักถูกออกแบบขึ้นมาเพื่อจุดประสงค์เฉพาะอย่าง เช่น เพื่อให้ใช้เครื่องมือต่างๆของมนุษย์ เพื่อให้อยู่ในสภาพแวดล้อมของมนุษย์
@@ -66,63 +65,35 @@ Hirai และคณะ (1998) พัฒนาหุ่นยนต์ฮิว
 หุ่นยนต์สามารถเดินได้ด้วยความเร็วสูงสุด 4.7 กิโลเมตรต่อชั่วโมง หุ่นยนต์ประกอบไปด้วย แขนข้างละ 9 องศาอิสระ ขาข้างละ 6 องศาอิสระ
 ที่บริเวณหัวมีกล้องติดตั้งอยู่ 4 ตัว นอกจากนี้ยังมีอุปกรณ์ที่ใช้ในการรักษาสมดุลอื่นๆ อีกได้แก่ IMU ที่ติดตั้งบริเวณลำตัว และ Force sensor ที่ติดที่เท้าทั้งสองข้าง
 
+\clearpage
 ส่วนประกอบของหุ่นยนต์ฮิวมานอยด์สามารถจำแนกออกเป็นส่วนหลักๆได้สามส่วนคือ 
 ส่วนการรับรู้ ส่วนการประมวลผล และส่วนการขับเคลื่อน
 
 \subsubsection*{การรับรู้ของหุ่นยนต์ฮิวมานอยด์}
-Sensing on humanoid robots is more difficult than on other types of robots since the
-movement of the robot leads to noise in the sensors.  For example, camera images
-get blurry if the shutter speed is too slow or if it is a rolling shutter sensor.  Also,
-odometry  data  is  less  certain  than  on  wheeled  robots.   Furthermore,  the  position
-of sensors in relation to the world is not stable.  On a wheeled robot, the camera
-is  usually  a  fixed  hight  above  the  ground.   A  humanoid  robot  has  to  do  forward
-kinematics from its support feet to the camera to get the position and orientation.
-This also requires knowing which leg is the supporting leg and if the robot is standing
-at all. For this an inertia measurement unit (IMU) and position encoders in the joints
-are crucial.  These are described in the following.
-The  IMU  is  a  combination  of  a  gyroscope  and  an  accelerometer.   It  measures
-angular velocities and linear accelerations.  It is normally installed inside the torso
-near the center of mass.  The sensor values can be used to detect falls and to identify
-the side on which the robot landed after a fall.
-Furthermore,  the  positions  of  the  robot’s  joints  have  to  be  measured.   This  is
-usually  realized  by  a  combination  of  a  magnet  on  the  end  of  the  outermost  gear
-and a hall sensor [Ramsden, 2011].  When the gear rotates, the magnet field rotates
-accordingly.  The hall sensor measures this and a microcontroller can compute the
-position of the servo based on this data.
+การรับรู้ของหุ่นยนต์ฮิวมานอยด์นั้นมีความยากมากกว่าหุ่นยนต์ชนิดอื่นๆเพราะหุ่นยนต์จะมีการเคลื่อนที่ และการเคลื่อนที่นั้นทำให้เซนเซอร์โดนรบกวนได้
+ยกตัวอย่างเช่น ภาพที่ได้จากกล้องนั้นอาจจะเบลอได้ถ้าความเร็วของชัตเตอร์ช้าเกินไป หรือว่าภาพเปลี่ยนขณะที่กำลังกดชัตเตอร์
+ข้อมูลตำแหน่งของตัวเองก็มีความแน่นอนที่น้อยกว่าหุ่นยนต์เคลื่อนที่ด้วยล้อ เพราะเซนเซอร์ที่วัดตำแหน่งเทียบกับเฟรมโลกไม่มีความเสถียร
+หุ่นยนต์ที่เคลื่อนที่ด้วยล้อปกติถ้าติดกล้อง ตัวกล้องจะมีความสูงจากพื้นคงที่ แต่หุ่นยนต์ฮิวมานอยด์ไม่ใช่ โดยหุ่นยนต์ฮิวมานอยด์นั้นจะต้องมีการคำนวณ
+forward kinematics จากเท้าที่สัมผัสกับพื้นมายังกล้องเพื่อหาตำแหน่งและการหมุนของกล้อง ส่วนการวัดตำแหน่งของตัวหุ่นยนต์นั้น
+โดยทั่วไปแล้วจะใช้เซนเซอร์ inertia measurement unit (IMU) และเซนเซอร์ Encoders สำหรับหาตำแหน่งของข้อต่อต่างๆ
+ปกติจะติดเซนเซอร์ IMU ไว้ที่ลำตัวของหุ่นยนต์ใกล้ๆกับ center of mass ของหุ่นยนต์ ส่วน Encoder นั้นจะติดไว้ที่ข้อต่อของหุ่นยนต์
 
 \subsubsection*{การประมวลผลของหุ่นยนต์ฮิวมานอยด์}
-In  the  early  days  of  humanoid  robots,  having  enough  computational  power  was
-difficult because the  space and  mass for  the computational  unit are  very  limited.
-Today, single-board computers, e.g.  Raspberry Pi [Upton and Halfacree, 2014], and
-Intel NUCs [Perico et al., 2014] are mostly used, depending on the size of the robot.
-All these boards provide GPUs and multiple CPU cores.  Therefore the interest in
-parallelizing software and outsourcing computation to the GPU, especially for neural
-networks  and  computer  vision,  rose  in  the  last  years.   Sometimes  multiple  cheap
-single-board computers are installed and connected using an Ethernet network, to
-get  a  high  performance  for  low  cost.   This  comes  with  the  disadvantage  that  the
-software has to be able to run in parallel on a distributed system.
+ในปัจจุบันนี้หุ่นยนต์ฮิวมานอยด์มีความสามารถในการคำนวณที่สูงมากเมื่อเทียบกับเมื่อก่อน บอร์ดที่เราสามารถเห็นได้โดยทั่วไปเช่น
+Raspberry Pi, Odroid, Intel NUCs ซึ่งตัวบอร์ดมีขนาดเล็กจึงทำให้เข้าไปอยู่ในตัวของหุ่นยนต์ได้ แถมบอร์ดพวกนี้ยังมี GPUs
+และ CPU หลายคอร์อีกด้วย บางครั้งก็มีคนที่เอาพวกบอร์ดพวกนี้มาทำงานร่วมกันหลายๆตัว ประมวลผลแบบ pararell เพื่อที่จะเพิ่มประสิทธิภาพในการประมวลผล
+โดยเชื่อมต่อระหว่างกันผ่าน Ethernet network 
 
 \subsubsection*{การขับเคลื่อนของหุ่นยนต์ฮิวมานอยด์}
-A humanoid robot is typically composed of multiple joints.  Each joint has to be
-actuated which can be done in two different ways.  Either the joint can be moved
-by tendons, similar to the human movement, or a motor can be placed directly into
-the  joint  axis.   The  later  approach  is  used  more  often  in  smaller  robots,  since  it
-needs less space.  Using tendons makes exact positioning of the joint more difficult,
-but also enables to use bigger and linear motors, since they don’t have to be placed
-inside the joint.
-Actuators need a high strength in relation to their weight, since they have to carry
-themselves.  Multiple actuators are typically needed for one limb, resulting in a high
-number of cables, which have to be laid over multiple joints.  Therefore a bus system
-is often used to limit the number of cables.  The bus requires the motors to have a
-micro controller, to receive goal positions and to send the current position.  Micro
-controller, motor and a gearbox are usually grouped together in a case and called
-servo
-.  For reaching the goal position and for holding it, a controller is required in
-the firmware of the servo.  This is usually a PID controller [Wescott, 2000].
+หุ่นยนต์ฮิวมานอยด์ส่วนใหญ่จะมีข้อต่ออยู่หลายๆจุด แต่ละข้อต่อจะมีตัวขับเคลื่อน ตัวขับเคลื่อนมีอยู่หลักๆสองแบบคือ
+แบบกล้ามเนื่อของมนุษย์ และแบบมอเตอร์ที่ติดตรงที่ข้อต่อเลย ที่นิยมใช้คือแบบมอเตอร์ที่ติดที่ข้อต่อเลย เพราะทำให้ตัวของหุ่นยนต์มีขนาดเล็ก
+ใช้พื้นที่น้อย การใช้เส้นเอ็นดึงนั้นจะการจะทำให้ข้อต่อไปยังตำแหน่งที่ต้องการได้ยากกว่า ตัวขับเคลื่อนนั้นต้องการแรงมากน้อยขึ้นอยู่กับ
+น้ำหนักของตัวหุ่นยนต์ เพื่อที่จะทำให้หุ่นยนต์นั้นยังยืนได้
 
 \clearpage
 \subsection{ทฤษฏีที่เกี่ยวข้องกับมนุษย์}
 \input{chapter2/literature_review/humanwalk}
+
 \subsection{ทฤษฏีที่เกี่ยวข้องกับหุ่นยนต์ฮิวมานอยด์}
 \input{chapter2/literature_review/humanoid}
 
