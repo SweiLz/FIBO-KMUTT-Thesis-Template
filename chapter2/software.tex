@@ -1,36 +1,50 @@
 \subsection{ระบบที่ใช้ช่วยในการพัฒนาหุ่นยนต์}
+Robot Middleware เป็นกรอบการทำงาน(framework) ที่มีความยืดหยุ่นสำหรับการพัฒนาซอฟแวร์ที่เกี่ยวข้องกับหุ่นยนต์ โดยมีเครื่องมือที่ช่วยติดต่อสื่อสารระหว่างอุปกรณ์ต่าง ๆของหุ่นยนต์ Robot Middleware ส่วนใหญ่จะใช้การติดต่อสื่อสารผ่านระบบเครือข่ายเน็ตเวิร์ค ทำให้การสื่อสารในระบบพื้นฐานเป็นอิสระต่อกัน และสามารถติดต่อสื่อสารกันกับอุปกรณ์ที่อยู่ภายนอกผ่านเครือข่ายเดียวกันได้
+ปัจจุบันมี Robot Middleware ที่ถูกพัฒนาขึ้นมาให้ใช้อยู่หลายตัวเช่น
+Player Project: เป็นโปรเจคที่ใช้ในการสร้างซอฟแวร์เพื่อการศึกษาวิจัยที่มีความเกี่ยวข้องกับหุ่นยนต์และระบบเซนเซอร์
+YARP: เป็น open source ที่เขียนด้วยภาษา C++ ในการเชื่อมต่อกับเซนเซอร์ หน่วยประมวลผล และตัวขับเคลื่อนของหุ่นยนต์
+URBI: เป็น open source สำหรับพัฒนาแอพพลิเคชั่นที่เกี่ยวข้องกับหุ่นยนต์หรือระบบที่มีความซับซ้อน ใช้ภาษาพื้นฐานเป็นภาษา C++ ติดต่อสื่อสารได้ภายในเครือข่ายเดียวกันเท่านั้น (Local Network)
+MIRO: เป็นกรอบการทำงานของหุ่นยนต์ที่เคลื่อนที่ได้โดยเขียนในลักษณะเป็น OOP
+OpenRDK: เป็น open source สำหรับพัฒนาระบบที่มีความเป็นอิสระต่อกัน (Modules) สามารถใช้ช่องทางการติดต่อสื่อสารและหน่วยความจำร่วมกันได้
+ROS: เป็นแหล่งรวมเครื่องมือที่ใช้พัฒนาซอฟแวร์หุ่นยนต์
 
+\clearpage
 \subsection{ระบบที่ใช้ในการจำลองการทำงานของหุ่นยนต์}
+โปรแกรมจำลองการทำงานของหุ่นยนต์นั้นเป็นเครื่องมือที่สำคัญสำหรับนักหุ่นยนต์ การใช้โปรแกรมจำลองนั้นจะช่วยเพิ่มประสิทธิภาพในการทำงานหลายอย่าง เช่น ให้รู้ว่าหุ่นยนต์ที่ออกแบบนั้นสามารถทำงานได้อย่างที่ต้องการหรือไม่ กระบวนการคิดถูกต้องหรือไม่ โปรแกรมจำลองระบบส่วนใหญ่จะคำนวณพลวัตของหุ่นยนต์โดยใช้เครื่องมือคำนวณ open dynamics engine (ODE)
+USARSim
 
 
+รูปที่ 2.9 ผลลัพธ์จากการใช้โปรแกรม USARSim
+USARSim เป็นโอเพนซอร์ซและเหมาะสำหรับทำหุ่นยนต์ประเภทกู้ภัยในซากเมือง โดยมีฐานการพัฒนามาจาก Unreal Tournament game engine ภายในโปรแกรมมีเครื่องมือสำหรับการทำงานวิจัย มีเซนเซอร์ของหุ่นยนต์ที่หลากหลาย เช่น เซนเซอร์รับภาพ หรือเซนเซอร์ตรวจความเคลื่อนไหว
+MuRoSimF
 
+รูปที่ 2.10 ผลลัพธ์จากโปรแกรม MuRoSimF
+MuRoSimF ย่อมาจากคำว่า Multi-Robot Simulation Framework เป็นเครื่องมือที่ช่วยทำระบบจำลองจาก Darmstadt University โปรแกรมระบบจำลองนี้มีการใช้งานที่ง่าย เหมาะสำหรับหุ่นยนต์หลายประเภท เช่น หุ่นยนต์เคลื่อนที่ด้วยล้อ หุ่นยนต์สองขา หรือหุ่นยนต์หลายขา สามารถคำนวณพลวัตร และการขัดกันของก้านต่อต่าง ๆได้
+Gazebo
+
+รูปที่ 2.11 โปรแกรม Gazebo ที่กำลังจำลอง HR OS5 Humanoid Research Platform
+Gazebo เป็นโปรแกรมจำลองการทำงานของหุ่นยนต์ ที่มีความสามารถในการคำนวณการเดินและการเคลื่อนที่ของหุ่นยนต์ที่สลับซับซ้อนได้ สามารถเห็นภาพกราฟฟิคของหุ่นยนต์ขณะทำงาน โดยผู้ใช้สามารถกำหนดค่าตัวแปรทางฟิสิกส์ต่าง ๆได้ เช่นน้ำหนัก ค่าความเฉื่อย แรงเสียดทานของข้อต่อ ทำให้การออกแบบหุ่นยนต์หรือทดลองโปรแกรมได้เหมือนกับโลกจริง มีแสง มีเงา และ พื้นผิวของวัตถุ และที่พิเศษคือสามารถสังเคราะห์ค่าของเซนเซอร์ เซนเซอร์พร้อมสัญญาณรบกวน ค่าระยะทาง แรงบิด และอื่นๆ คำนวณพลศาสตร์ของหุ่นยนต์โดยใช้ตัวคำนวณทางฟิสิกส์เป็น Bullet หรือ Simbody ในการจำลองหุ่นยนต์ในโปรแกรมนี้จำเป็นต้องได้รับไฟล์ข้อมูลของหุ่นยนต์มาก่อนซึ่งอยู่ในรูปแบบของ URDF ซึ่ง URDF คือ ประเภทของไฟล์ที่บ่งบอกถึงความสัมพันธ์ของข้อต่อและก้านต่อแต่ละชิ้นในตัวหุ่นยนต์ มีความสามารถในการอธิบายถึงกลศาสตร์และการเคลื่อนที่ของหุ่นยนต์ รวมถึงตรวจสอบการขัดกันของก้านต่อในหุ่นยนต์ได้ ภายในไฟล์นี้จะประกอบไปด้วย
+Link: คือก้านต่อของหุ่นยนต์ซึ่งภายในจะสามารถบอกขนาด รูปร่าง สี และสามารถ import 3d mesh เข้ามาได้ด้วย อีกทั้งยังสามารถใส่รายละเอียดของการเคลื่อนที่ ของก้านต่อได้เช่น inertial matrix และ collision properties
+Joint: คือข้อต่อของหุ่นยนต์สามารถกำหนดกลศาสตร์และการเคลื่อนที่ได้เช่น Joint limits ของข้อต่อที่กำลังหมุนและความเร็วการหมุน ซึ่งข้อต่อมีหลายแบบที่สามารถกำหนดได้เช่น ข้อต่อแบบหมุน, ข้อต่อแบบเลื่อน, ข้อต้อต่อแบบยึดติด, ข้อต่อแบบต่อเนื่อง
+
+\clearpage
 \subsection{Robot Operating System}
-The Robot Operating System (ROS) was developed by Willow Garage,  originally
-for  the  PR2  robot  in  2007  [Quigley et al., 2009].   It  is  an  open  source  framework
-for  developing  software  in  robotics  with  a  focus  on  the  ability  to  run  parallel  on
-distributed  computer  systems.   It  can  be  run  on  different  operating  systems,  but
-only Ubuntu and Debian are officially supported.  Its main advantage is a big library
-of  available  software  modules  for  common  robotics  tasks.   These  are  developed,
-maintained and documented by the ROS community and adding further modules is
-easy.  Using ROS decreases the time for developing software as most of the parts can
-be taken from the library.  In the following section, a short overview of the concepts
-of ROS is provided.  A deeper insight can be found in the online documentation [3].
+Robot Operating System หรือ ROS ถูกพัฒนาโดยบริษัท Willow Garage, แต่เดิมแล้วเค้าพัฒนาเพื่อใช้งานกับหุ่นยนต์ PR2 ในปี 2007
+ซึ่งพัฒนาเป็น open source framework สำหรับนักพัฒนาซอฟแวร์ที่เกี่ยวข้องกับหุ่นยนต์ มีความสามารถในการทำงานแบบ parallel
+บนคอมพิวเตอร์หลายๆเครื่องได้ สามารถทำงานได้หลาย OS แต่ที่ซัพพอร์ทจริงๆคือ Ubuntu และ Debian นอกจากนี้ยังมีคลังที่คอยเก็บซอฟแวร์ต่างๆไว้เป็น
+libraries อีกด้วย การใช้ ROS จะช่วยทำให้เราสามารถพัฒนาหุ่นยนต์ได้อย่างรวดเร็วมากขึ้น ประหยัดเวลา ประหยัดทรัพยากร
+ในส่วนนี้จะกล่าวถึง ROS คร่าวๆ
 
 \subsubsection*{Nodes}
-A node is a process in the ROS system.  It can communicate with other ROS nodes
-via  topics  or  services.   In  doing  so,  all  nodes  form  a  computational  graph.   Each
-node has typically a clearly defined subtask.  For example one node gets the camera
-image, a second node detects balls on this image, and a third node computes the
-ball positions.  Nodes can be easily reused in different tasks, for example the node
-which gets the camera image can be reused in a different task that detects goals.
-Open  source  implementations  of  nodes  for  most  standard  subtasks,  especially
-hardware controlling, already exist.  Thereby the effort in implementing a new task
-is drastically decreased.  The most important packages used for this thesis are men-
-tioned in section 2.3.7
-
+Node เป็นเหมือนหน่วยประมวลผลในระบบ ROS, Node สามารถที่จะส่งข้อมูลหาโหนดอื่นๆได้ ผ่าน Topics หรือ Services
+ในทางปฏิบัติแล้วโหนดเป็นตัวประมวลผลย่อยๆ ที่คอยทำหน้าที่เฉพาะ ยกตัวอย่างเช่น โหนดตัวแรกเชื่อมต่อกับกล้อง
+เพื่อที่จะนำภาพจากกล้องออกมา โหนดตัวที่สองใช้ในการหาลูกบอลที่อยู่ในภาพที่ได้มาจากโหนดตัวแรก และโหนดตัวที่สามใช้ในการคำนวณหาตำแหน่งของลูกบอลที่อยู่บนโลกจริงๆ
+จากตำแหน่งของลูกบอลที่ได้มาจากโหนดที่สอง ดังนั้นจะเห็นว่าแต่ละโหนดจะทำงานเฉพาะของตัวเอง ซึ่งสามารถนำมารวมกันได้ การเขียนเป็นแบบโหนดจะช่วยทำให้เราสามารถที่จะนำโปรแกรมกลับมา
+แก้ไขปรับปรุงให้ใช้ใหม่ได้ง่าย ในกรณีที่จะนำไปทำงานอย่างอื่น ยกตัวอย่างเช่น โหนดที่เอาภาพจากกล้องออกมา อาจจะมีโหนดอีกตัว ทำหน้าที่ในการหาโกลด์เป้าหมาย และหาทิศทางการเคลื่อนที่ของหุ่นยนต์ได้
+ดังนั้นการพัฒนาโหนดเป็นส่วนย่อยๆเล็กๆ ก็เพื่อที่จะทำให้การแก้ไขหรือปรับปรุงได้ง่าย
 \begin{figure}[htbp]
 	\centering	    
-	\begin{tikzpicture}[shorten > = 1pt]
+	\begin{tikzpicture}[shorten > = 1pt,scale=0.9, transform shape]
 		% Place nodes
 		\node [node] (image_provider) {image\_provider};
 		\node [topic, below of=image_provider] (/image) {/image\\sensor\_msgs/Image.msg};
@@ -53,21 +67,14 @@ tioned in section 2.3.7
 		\path [line] (/cmd_vel) -- (robot_control);
 	\end{tikzpicture}
 	\caption{ตัวอย่างสถาปัตยกรรมของ ROS}
-	\label{fig:poppy_humanoidz}
+	\label{fig:ros_architecture}
 \end{figure}
 
-Example ROS architecture for a simple wheeled robot with the task to
-follow  a  line  until  it  finds  a  stop  marker.   The  nodes  are  displayed  as
-ellipses with a name and the topics are shown as rectangles with name
-and message type.  First, an image is provided from the camera.  Lines
-and stop markers are detected on this image.  Based on this information,
-a navigation node computes the necessary movement of the robot and
-publishes it.  The robot
-control node is then controlling the motors of
-the robot accordingly
-
-
-
+จากตัวอย่างสถาปัตยกรรมของ ROS ดังรูปที่ \ref{fig:ros_architecture} นั้นสามารถอธิบายได้ว่า หุ่นยนต์เคลื่อนที่ด้วยล้อมีภารกิจคือ
+เคลื่อนที่ตามเส้นไปเรื่อยๆจนกว่าจะเจอเครื่องหมายหยุด Node คือตัวที่แสดงด้วยรูปวงรี ข้างในเป็นชื่อโหนด ส่วน Topic จะแสดงด้วยรูปสี่เหลี่ยม
+ซึ่งข้างในเป็นชื่อของ Topic และชนิดของ Message ที่ใช้ในการส่งข้อมูล, มาดูกันก่อนอื่น ภาพถูกส่งมาจากกล้อง และก็มีโหนดสองตัวในการดูเส้น และเครื่องหมายหยุด
+จากภาพที่ได้มา เมื่อโหนดได้ข้อมูลแล้วก็นำมาประมวลผลการเดินของหุ่นยนต์โดยส่งไปยัง node navigation และโหนดนี้ก็จะทำหน้าที่คำนวณความเร็วและทิศทางของหุ่นยนต์
+ส่งไปยัง node robot\_control ซึ่งเป็นตัวสั่งการมอเตอร์ของหุ่นยนต์อีกทีนึง
 \begin{table}[htbp]
 	\begin{subtable}[h]{0.40\textwidth}
 		\centering
@@ -79,8 +86,8 @@ the robot accordingly
 			geometry\_msgs/Vector3 & angular \\
 			\hline  
 		\end{tabular}
-		\caption{First Week}
-		\label{tab:week1}
+		\caption{Message Twist}
+		\label{tab:message_twist}
 	\end{subtable}
 	\hfill
 	\begin{subtable}[h]{0.40\textwidth}
@@ -95,22 +102,21 @@ the robot accordingly
 			float32 & distance  \\
 			\hline  
 		\end{tabular}
-		\caption{First Week}
-		\label{tab:week1}
+		\caption{Message Stop}
+		\label{tab:message_stop}
 	\end{subtable}
-	\caption{Max and min temps recorded in the first two weeks of July}
-	\label{tab:temps}
+	\caption{ตัวอย่างชื่อและข้อมูลของ Message}
+	\label{tab:message_example}
 \end{table}
 
-two example messages.  The
-Twist
-message (left) is already defined in
-ROS. The
-Stop
-message (right) is newly defined for the special applica-
-tion case of figure 2.4.
+ตัวอย่างของ Message สองอันนี้ Twist message (รูปที่ \ref{tab:message_twist}) คือ message ที่เอาไว้บอกความเร็วเชิงเส้น และความเร็วเชิงมุม
+ซึ่ง ROS มี message ชนิดนี้ให้อยู่แล้ว ส่วน Stop message (รูปที่ \ref{tab:message_stop}) คือ message ที่เอาไว้บอกระยะทางและสีของป้าย Stop
+ซึ่ง message นี้ถูกสร้างขึ้นมาใหม่เพื่อใช้กับงานนี้โดยเฉพาะ ดังรูปที่ \ref{fig:ros_architecture}
 
 \subsubsection*{Topics and Messages}
+Messages เป็นตัวหลักสำคัญในการติดต่อสื่อสารกันระหว่างโหนดใน ROS โดยที่ message จะถูกส่งผ่านไปยัง topic เสมอ
+และ topic จะต้องมีที่เฉพาะ แต่ละ topic จะใช้ชนิดของ message เป็นอันเดียว 
+
 Messages are the main communication method between ROS nodes.  Messages are
 always published on a topic, which is identified by a name and can only transmit
 one  type  of  message.   A  node  can  subscribe  to  a  topic  and  will  get  the  messages
