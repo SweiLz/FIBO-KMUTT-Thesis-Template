@@ -24,11 +24,12 @@
 \usepackage{fontspec,xltxtra,xunicode,polyglossia} %% สำหรัลการสร้างเอกสารโดยใช้ Unicode
 \usepackage{parskip}
 \usepackage[hidelinks]{hyperref}
-
+\usepackage{pgfgantt}
 \graphicspath{{images/}}
 \usepackage{caption}
 \usepackage{subcaption}
-
+\usepackage{multirow}
+\usepackage{colortbl}
 \usepackage{setspace}
 \usepackage{enumitem} %% สำหรับเรียงไอเทม
 \usepackage{natbib}
