@@ -21,7 +21,9 @@
 \RequirePackage{ifthen} %% สำหรับใช้ if-else
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx} %% สำหรับการจัดการภาพ
-\usepackage{fontspec,xltxtra,xunicode,polyglossia} %% สำหรัลการสร้างเอกสารโดยใช้ Unicode
+\usepackage{fontspec}
+\usepackage{xltxtra,xunicode}
+\usepackage{polyglossia} %% สำหรัลการสร้างเอกสารโดยใช้ Unicode
 \usepackage{parskip}
 \usepackage[hidelinks]{hyperref}
 \usepackage{pgfgantt}
@@ -148,6 +150,7 @@
 \titlespacing{\subsection}{0pt}{0pt}{0pt}
 \titlespacing{\subsubsection}{5mm}{0pt}{0pt}
 \titlespacing{\paragraph}{10mm}{0pt}{10pt}
+\titlespacing{\subparagraph}{10mm}{0pt}{10pt}
 \titleformat{\section}[block]{\large\bfseries}{\thesection}{1ex}{}
 \titleformat{\subsection}[block]{\normalfont\bfseries}{\thesubsection}{1ex}{}
 \titleformat{\subsubsection}[block]{\normalfont\bfseries}{\thesubsubsection}{1ex}{}

@@ -1,106 +1,111 @@
 % ************************** Thesis Chapter3 **********************************
 \chapter{การดำเนินงานวิจัย}
-
-% \section{}
-\section{หน้าที่ความรับผิดชอบ}
-List are really easy to create
- 
-\begin{itemize}
-  \item One entry in the list
-  \item Another entry in the list
-\end{itemize}
 \section{แผนการดำเนินงาน}
+การออกแบบหุ่นยนต์ฮิวมานอยด์นั้น ผู้วิจัยได้มีการตั้งชื่อให้หุ่นยนต์ โดยใช้ชื่อว่า อุทัย (UTHAI)
+มาจากภาษาอังกฤษคำว่า Universal Template for Humanoid Algorithm Interface
+เพื่อให้สมกับเป็นหุ่นยนต์ฮิวมานอยด์ที่ใช้สำหรับงานวิจัยและพัฒนาต่อยอด
+
 \hspace{-100pt}
 \begin{ganttchart}[
-  y unit title=0.5cm,
-  y unit chart=0.6cm,
-  vgrid={*6{draw=none}, dotted},
-  hgrid,
-  x unit=1.25pt,
-  time slot format=isodate,
-  % compress ca1lendar,
-  title/.append style={shape=rectangle, fill=black!10},
-  title height=1,
-  bar/.append style={fill=green!90},
-  bar height=.6,
-  bar label font=\normalsize\color{black!50},
-  group top shift=.6,
-  group height=.3,
-  group peaks height=.3,
-]{2017-08-01}{2018-05-20}
-\gantttitlecalendar{year,month} \\
-
-\ganttset{progress label text={},
-     bar incomplete/.append style={fill=green!40},
-     group/.append style={draw=black, fill=green},} % this suppresses percentage done labels
-\ganttgroup{Design}{2017-08-01}{2018-01-01} \\
-  \ganttbar[progress=00, name=bg_research]{Background Research}{2017-08-01}{2017-08-31} \\
-  \ganttlinkedbar[progress=00, name=cad_analysis]{CAD analysis}{2017-08-31}{2017-09-07} \\
-  % \ganttlinkedbar[progress=00, name=rflr]{R fluorescence}{2015-07}{2015-09} \\
-  % \ganttlinkedbar[progress=00, name=rqpcr]{R RT-qPCR}{2015-10}{2015-11} \\
-  % \ganttbar[progress=50, name=case_cad]{Case CAD}{2017-08-01}{2017-08-08} \\
-  % \ganttbar[progress=00, name=case_check]{Case Check}{2017-08-01}{2017-08-08} \\
-  % \ganttlinkedbar[progress=00, name=kogro]{KO growth}{2015-08}{2015-09} \\
-  % \ganttbar[progress=00, name=case_printing]{Case Printing}{2017-08-01}{2017-08-08} \\
-  \ganttlinkedbar[progress=00, name=lower_limb_cad]{Lower Limb CAD}{2017-09-08}{2017-10-08} \\
-  \ganttlinkedbar[progress=00, name=lower_cad]{Final Lower CAD}{2017-10-09}{2017-10-15} \\
-  \ganttbar[progress=00, name=lower_print]{Lower 3D printing}{2017-08-01}{2017-08-08} \\
-  \ganttbar[progress=00, name=upper_limb_cad]{Upper Limb CAD}{2017-08-01}{2017-08-08} \\
-  \ganttbar[progress=00, name=upper_cad]{Final Upper CAD}{2017-08-01}{2017-08-08} \\
-  \ganttbar[progress=00, name=upper_print]{Upper 3D printing}{2017-08-01}{2017-08-08} \\
-  \ganttbar[progress=00, name=motor_assembly]{Motor assembly}{2017-08-01}{2017-08-08} \\
-  \ganttbar[progress=00, name=platfom_assembly]{Platform assembly}{2017-08-01}{2017-08-08} \\
-  % \ganttlinkedbar[progress=00, name=koo2]{KO O2 evolution}{2015-10}{2015-11} \\
-\ganttset{bar incomplete/.append style={fill=red!40},
-  group/.append style={draw=black, fill=red},}
-\ganttgroup{Modelling}{2017-08-01}{2018-01-05} \\
-\ganttbar[progress=00, name=box_model]{BOX model}{2017-08-01}{2017-08-08} \\
-\ganttlinkedbar[progress=00, name=mesh_model]{Mesh model}{2017-08-01}{2017-08-08} \\
-\ganttlinkedbar[progress=00, name=description_pkg]{Description Package}{2017-08-01}{2017-08-08} \\
-\ganttbar[progress=00, name=gazebo_param]{Gazebo paremeters}{2017-08-01}{2017-08-08} \\
-\ganttlinkedbar[progress=00, name=gazebo_pkg]{Gazebo Package}{2017-08-01}{2017-08-08} \\
-  % \ganttbar[progress=00, name=oeclone]{Clone OEs}{2016-01}{2016-03} \\
-  % \ganttbar[progress=00, name=rnagrow]{Grow KOs + OEs}{2016-04}{2016-06} \\
-  % \ganttlinkedbar[progress=00, name=rnaprep]{RNA library prep}{2016-07}{2016-09} \\
-  % \ganttbar[progress=00, name=rnadev]{Develop analysis}{2015-06}{2015-07} \\
-  % \ganttbar[progress=00, name=rnaanal]{Analyze reads}{2016-12}{2017-02} \\
-\ganttset{bar incomplete/.append style={fill=blue!40},
-group/.append style={draw=black, fill=blue},}
-\ganttgroup{Control}{2017-08-01}{2018-01-05} \\
-\ganttbar[progress=00, name=control_config]{Setting control files}{2017-08-01}{2017-08-08} \\
-\ganttlinkedbar[progress=00, name=control_pkg]{Control Package}{2017-08-01}{2017-08-08} \\
-\ganttlinkedbar[progress=00, name=setting_motor_pkg]{Setting motor Package}{2017-08-01}{2017-08-08} \\
-\ganttlinkedbar[progress=00, name=motor_driver_pkg]{Motor driver Package}{2017-08-01}{2017-08-08} \\
-\ganttlinkedbar[progress=00, name=setting_firmware]{Setting firmware}{2017-08-01}{2017-08-08} \\
-\ganttlinkedbar[progress=00, name=final_check]{Final Check}{2017-08-01}{2017-08-08} \\
-  % \ganttbar[progress=00, name=chipgrow]{Grow KOs + OEs}{2016-04}{2016-06} \\
-  % \ganttlinkedbar[progress=00, name=chipprep]{ChIP library prep}{2016-08}{2016-12} \\
-  % \ganttbar[progress=00, name=chipdev]{Develop analysis}{2016-01}{2016-02} \\
-  % \ganttbar[progress=00, name=chipanal]{Analyze reads}{2017-03}{2017-05}
-  \ganttset{bar incomplete/.append style={fill=orange!40},
-  group/.append style={draw=black, fill=orange},}
-  \ganttgroup{Document}{2017-08-01}{2018-01-05} \\
-  \ganttbar[progress=00, name=control_config]{Setting control files}{2017-08-01}{2017-08-08} \\
-  
-% misc links
-\ganttset{progress label text={}}
-%   \ganttlink[]{oeclone}{rnagrow}
-%   \ganttlink[link mid=0.082]{oeclone}{chipgrow}
-%   \ganttlink[]{rnaprep}{rnaanal}
-%   \ganttlink[link mid=0.25]{kover}{koflr}
-%   \ganttlink[link mid=0.75]{kogro}{koo2}
-%   \ganttlink[link mid=0.55]{koo2}{oeclone}
-%   \ganttlink[link mid=0.55]{rqpcr}{oeclone}
-%   \ganttlink[]{chipprep}{chipanal}
-%   \ganttlink[link mid=0.938]{rnadev}{rnaanal}
-%   \ganttlink[link mid=0.915]{chipdev}{chipanal}
+		y unit title=0.5cm,
+		y unit chart=0.6cm,
+		vgrid={*6{draw=none}, dotted},
+		hgrid,
+		x unit=1.25pt,
+		time slot format=isodate,
+		% compress ca1lendar,
+		title/.append style={shape=rectangle, fill=black!10},
+		title height=1,
+		bar/.append style={fill=green!90},
+		bar height=.6,
+		bar label font=\normalsize\color{black!50},
+		group top shift=.6,
+		group height=.3,
+		group peaks height=.3,
+	]{2017-08-01}{2018-05-20}
+	\gantttitlecalendar{year,month} \\
+	
+	\ganttset{progress label text={},
+		bar incomplete/.append style={fill=green!40},
+		group/.append style={draw=black, fill=green},} % this suppresses percentage done labels
+	\ganttgroup{Design}{2017-08-01}{2018-01-01} \\
+	\ganttbar[progress=00, name=bg_research]{Background Research}{2017-08-01}{2017-08-31} \\
+	\ganttlinkedbar[progress=00, name=cad_analysis]{CAD analysis}{2017-08-31}{2017-09-07} \\
+	% \ganttlinkedbar[progress=00, name=rflr]{R fluorescence}{2015-07}{2015-09} \\
+	% \ganttlinkedbar[progress=00, name=rqpcr]{R RT-qPCR}{2015-10}{2015-11} \\
+	% \ganttbar[progress=50, name=case_cad]{Case CAD}{2017-08-01}{2017-08-08} \\
+	% \ganttbar[progress=00, name=case_check]{Case Check}{2017-08-01}{2017-08-08} \\
+	% \ganttlinkedbar[progress=00, name=kogro]{KO growth}{2015-08}{2015-09} \\
+	% \ganttbar[progress=00, name=case_printing]{Case Printing}{2017-08-01}{2017-08-08} \\
+	\ganttlinkedbar[progress=00, name=lower_limb_cad]{Lower Limb CAD}{2017-09-08}{2017-10-08} \\
+	\ganttlinkedbar[progress=00, name=lower_cad]{Final Lower CAD}{2017-10-09}{2017-10-15} \\
+	\ganttbar[progress=00, name=lower_print]{Lower 3D printing}{2017-08-01}{2017-08-08} \\
+	\ganttbar[progress=00, name=upper_limb_cad]{Upper Limb CAD}{2017-08-01}{2017-08-08} \\
+	\ganttbar[progress=00, name=upper_cad]{Final Upper CAD}{2017-08-01}{2017-08-08} \\
+	\ganttbar[progress=00, name=upper_print]{Upper 3D printing}{2017-08-01}{2017-08-08} \\
+	\ganttbar[progress=00, name=motor_assembly]{Motor assembly}{2017-08-01}{2017-08-08} \\
+	\ganttbar[progress=00, name=platfom_assembly]{Platform assembly}{2017-08-01}{2017-08-08} \\
+	% \ganttlinkedbar[progress=00, name=koo2]{KO O2 evolution}{2015-10}{2015-11} \\
+	\ganttset{bar incomplete/.append style={fill=red!40},
+		group/.append style={draw=black, fill=red},}
+	\ganttgroup{Modelling}{2017-08-01}{2018-01-05} \\
+	\ganttbar[progress=00, name=box_model]{BOX model}{2017-08-01}{2017-08-08} \\
+	\ganttlinkedbar[progress=00, name=mesh_model]{Mesh model}{2017-08-01}{2017-08-08} \\
+	\ganttlinkedbar[progress=00, name=description_pkg]{Description Package}{2017-08-01}{2017-08-08} \\
+	\ganttbar[progress=00, name=gazebo_param]{Gazebo paremeters}{2017-08-01}{2017-08-08} \\
+	\ganttlinkedbar[progress=00, name=gazebo_pkg]{Gazebo Package}{2017-08-01}{2017-08-08} \\
+	% \ganttbar[progress=00, name=oeclone]{Clone OEs}{2016-01}{2016-03} \\
+	% \ganttbar[progress=00, name=rnagrow]{Grow KOs + OEs}{2016-04}{2016-06} \\
+	% \ganttlinkedbar[progress=00, name=rnaprep]{RNA library prep}{2016-07}{2016-09} \\
+	% \ganttbar[progress=00, name=rnadev]{Develop analysis}{2015-06}{2015-07} \\
+	% \ganttbar[progress=00, name=rnaanal]{Analyze reads}{2016-12}{2017-02} \\
+	\ganttset{bar incomplete/.append style={fill=blue!40},
+		group/.append style={draw=black, fill=blue},}
+	\ganttgroup{Hardware Control}{2017-08-01}{2018-01-05} \\
+	\ganttbar[progress=00, name=control_config]{Setting control files}{2017-08-01}{2017-08-08} \\
+	\ganttlinkedbar[progress=00, name=control_pkg]{Control Package}{2017-08-01}{2017-08-08} \\
+	\ganttlinkedbar[progress=00, name=setting_motor_pkg]{Setting motor Package}{2017-08-01}{2017-08-08} \\
+	\ganttlinkedbar[progress=00, name=motor_driver_pkg]{Motor driver Package}{2017-08-01}{2017-08-08} \\
+	\ganttlinkedbar[progress=00, name=setting_firmware]{Setting firmware}{2017-08-01}{2017-08-08} \\
+	\ganttlinkedbar[progress=00, name=final_check]{Final Check}{2017-08-01}{2017-08-08} \\
+	% \ganttbar[progress=00, name=chipgrow]{Grow KOs + OEs}{2016-04}{2016-06} \\
+	% \ganttlinkedbar[progress=00, name=chipprep]{ChIP library prep}{2016-08}{2016-12} \\
+	% \ganttbar[progress=00, name=chipdev]{Develop analysis}{2016-01}{2016-02} \\
+	% \ganttbar[progress=00, name=chipanal]{Analyze reads}{2017-03}{2017-05}
+	\ganttset{bar incomplete/.append style={fill=orange!40},
+		group/.append style={draw=black, fill=orange},}
+	\ganttgroup{Document}{2017-08-01}{2018-01-05} \\
+	\ganttbar[progress=00, name=control_config]{Setting control files}{2017-08-01}{2017-08-08} \\
+	  
+	% misc links
+	\ganttset{progress label text={}}
+	%   \ganttlink[]{oeclone}{rnagrow}
+	%   \ganttlink[link mid=0.082]{oeclone}{chipgrow}
+	%   \ganttlink[]{rnaprep}{rnaanal}
+	%   \ganttlink[link mid=0.25]{kover}{koflr}
+	%   \ganttlink[link mid=0.75]{kogro}{koo2}
+	%   \ganttlink[link mid=0.55]{koo2}{oeclone}
+	%   \ganttlink[link mid=0.55]{rqpcr}{oeclone}
+	%   \ganttlink[]{chipprep}{chipanal}
+	%   \ganttlink[link mid=0.938]{rnadev}{rnaanal}
+	%   \ganttlink[link mid=0.915]{chipdev}{chipanal}
 \end{ganttchart}
 
+การดำเนินงานและการออกแบบการสร้างหุ่นยนต์ฮิวมานอยด์อุทัย มีแผนการทำงานซึ่งแบ่งออกเป็น 4 ส่วนดังนี้
+ส่วนแรกคือ ส่วนของฮาร์ดแวร์ที่เกี่ยวกับโครงสร้างทางกลของหุ่นยนต์ฮิวมานอยด์ เช่น ข้อต่อ ก้านต่อ ฝ่าเท้า
+รวมไปถึงระบบอิเล็กทรอนิกส์ ตัวประมวลผลการควบคุม เซนเซอร์ ตัวขับเคลื่อนต่าง ๆ และส่วนที่สองคือ
+ส่วนของซอฟท์แวร์ที่เกี่ยวข้องกับการติดต่อสื่อสารกันเบื้องต้น การควบคุมตัวขับเคลื่อนที่ข้อต่อ การอ่านค่าเซนเซอร์
+และระบบพื้นฐานสำหรับการใช้งาน ขั้นตอนในการทำงานวิจัยครั้งนี้
+
+
+\clearpage
 \section{การออกแบบโครงสร้างของหุ่นยนต์}
 \input{chapter3/hardware}
 
+\clearpage
 \section{การออกแบบโปรแกรมด้วย ROS}
 \input{chapter3/software}
 
+\clearpage
 \section{การออกแบบระบบพื้นฐาน}
 \input{chapter3/platform}
