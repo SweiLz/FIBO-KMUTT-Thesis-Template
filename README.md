@@ -1,16 +1,28 @@
-# Uthai-Report
-Uthai hardware report thesis latex
+# FIBO-KMUTT-Thesis-Template
+FIBO KMUTT Thesis Template with LaTeX
 
-install latex
-```
-sudo apt install texlive-xetex
-```
+## Install Xetex
 
-install font
+### Ubuntu
 ```
-font thsarabun new 
+$ sudo apt install texlive-xetex
 ```
 
+### Windows
+
+
+## Install font TH Sarabun New
+Font inside classes folder.
+
+how -> http://ubuntuhandbook.org/index.php/2016/05/manually-install-fonts-ubuntu-16-04/
+
+## Setting in VScode 
+
+Install LaTeX Workshop (James Yu) extention.
+
+Open setting.json then add this
+
+```
 "latex-workshop.latex.tools": [
         {
             "name": "xelatex",
@@ -21,7 +33,7 @@ font thsarabun new
             ]
         }
     ],
-    "latex-workshop.latex.recipes": [
+"latex-workshop.latex.recipes": [
         {
             "name": "xelatex",
             "tools": [
@@ -29,4 +41,4 @@ font thsarabun new
             ]
         }
     ],
-    "latex-workshop.view.pdf.viewer": "tab"
+"latex-workshop.view.pdf.viewer": "tab"
