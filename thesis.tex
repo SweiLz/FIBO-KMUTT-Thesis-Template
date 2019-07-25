@@ -1,8 +1,11 @@
-\documentclass{classes/fibothesis}
+\documentclass{classes/fiboThesis}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{lscape}
 
 \begin{document}
-
-\title{Structure Design and Platform Development of Universal Template\break for Humanoid Algorithm Interface (UTHAI)}
+\title{Structure Desig and Platform Development of Universal Template\break for Humanoid Algorithm Interface (UTHAI)}
 \titleTH{การออกแบบโครงสร้างและพัฒนาระบบพื้นฐานสำหรับหุ่นยนต์ฮิวมานอยด์\break เพื่อการศึกษาและวิจัย}
 
 \author{นายจิรัฏฐ์ ศรีรัตนอาภรณ์}
@@ -17,34 +20,35 @@
 
 \academicyearTH{2560}
 
-\begin{titlepage}
-	\maketitle
-\end{titlepage}
-\begin{innertitlepage}
-	\makeFIBOthesistitle
-\end{innertitlepage}
-\begin{othertitlepage}
-	\makeApprovalPage
-\end{othertitlepage}
+\maketitle
+\frontmatter
+\maketitleinner
+\makeapproval
+\input{pages/abstract}
+\input{pages/acknowledgements}
 
-\input{titlepages/abstract}
-\input{titlepages/acknowledgements}
-\FIBOtableofcontents
-\FIBOlistoftables
-\FIBOlistoffigures
-\input{titlepages/symbols}
-\input{titlepages/abbreviations}
+\tableofcontents
+\listoffigures
+\listoftables
+\input{pages/symbols}
+\input{pages/abbreviations}
 
-\input{chapter1/chapter1}
-\input{chapter2/chapter2}
-\input{chapter3/chapter3}
-\input{chapter4/chapter4}
-\input{chapter5/chapter5}
+\mainmatter
+% \input{chapter1/chapter1}
+% \input{chapter2/chapter2}
+% \input{chapter3/chapter3}
+% \input{chapter4/chapter4}
+% \input{chapter5/chapter5}
 
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{pages/reference}
+\addcontentsline{toc}{chapter}{เอกสารอ้างอิง}
 \begin{appendices}
-	\input{appendices/appendix1}
-	\input{appendices/appendix2}
+	\input{appendix/appendix1}
+	% \input{pages/appendix2}
 \end{appendices}
-\input{titlepages/vitae}
+
+\input{pages/vitea}
 
 \end{document}

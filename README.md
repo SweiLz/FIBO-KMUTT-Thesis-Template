@@ -1,43 +1,32 @@
-# FIBO-KMUTT-Thesis-Template
-FIBO KMUTT Thesis Template with LaTeX
+# Uthai-Report
+Uthai hardware report thesis latex
 
-### How to install in linux (Ubuntu)
-
+install latex
 ```
-$ sudo apt install texlive-xetex
+sudo apt install texlive-xetex
 ```
-### Install font TH Sarabun New
-download -> http://www.f0nt.com/release/th-sarabun-new/
 
-how -> http://ubuntuhandbook.org/index.php/2016/05/manually-install-fonts-ubuntu-16-04/
-
-### Setting in vscode
-
+install font
 ```
+font thsarabun new 
+```
+
 "latex-workshop.latex.tools": [
         {
-            "name": "latexmk",
+            "name": "xelatex",
             "command": "xelatex",
             "args": [
+                "-pdf",
                 "%DOC%"
-            ]
-        },
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOC%"
-            ]
-        },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-                "%DOCFILE%"
             ]
         }
-    ]
-```
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab"
