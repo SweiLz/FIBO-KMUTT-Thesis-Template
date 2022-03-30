@@ -10,6 +10,8 @@ $ sudo apt install texlive-xetex
 
 ### Windows
 
+Dowload MiKTeX https://miktex.org/download
+
 
 ## Install font TH Sarabun New
 Font inside classes folder.
@@ -28,7 +30,7 @@ Open setting.json then add this
             "name": "xelatex",
             "command": "xelatex",
             "args": [
-                "-pdf",
+                // "-pdf",
                 "%DOC%"
             ]
         }
