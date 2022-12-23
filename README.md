@@ -44,3 +44,8 @@ Open setting.json then add this
         }
     ],
 "latex-workshop.view.pdf.viewer": "tab"
+```
+
+## Eample Page
+
+![FrontPage](/readme/example_frontpage.png "FrontPage")
